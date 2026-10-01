@@ -1,0 +1,23 @@
+{
+  "name": "contenta-converter",
+  "displayName": "Contenta Converter",
+  "version": "1.0.0",
+  "description": "Contenta Converter on your Windows PC from Claude: batch image conversion, resizing, effects, metadata, PDF albums and slideshows for 100+ image formats. Runs locally on your files.",
+  "author": {
+    "name": "ContentaSoft AB",
+    "url": "https://www.contenta-software.com/"
+  },
+  "homepage": "https://www.contenta-converter.com/",
+  "repository": "https://github.com/ContentaSoft/contenta-converter-plugin",
+  "license": "MIT",
+  "keywords": [
+    "windows",
+    "batch",
+    "mcp",
+    "batch",
+    "image",
+    "conversion",
+    "resizing",
+    "effects"
+  ]
+}

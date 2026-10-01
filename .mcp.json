@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "contenta-converter": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@contentasoft/contenta-converter-mcp@1.0.0"
+      ]
+    }
+  }
+}
