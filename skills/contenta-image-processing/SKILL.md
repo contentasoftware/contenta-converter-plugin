@@ -1,7 +1,7 @@
 ---
 name: contenta-image-processing
 description: Convert, resize, watermark and tag images with the Contenta Converter CLI (contenta). Use when the user asks to convert image formats (including camera RAW, HEIC, AVIF, JPEG XL, PSD, PDF), resize photos for marketplaces or social media, apply effects, add a text watermark, write metadata, export icon sizes, build a PDF album, merge PDFs, split a multi-page PDF or TIFF into page images, make a photo slideshow video, or watch a folder.
-allowed-tools: Bash
+allowed-tools: Bash(contenta:*)
 ---
 
 # Contenta Converter (image processing)
