@@ -1,0 +1,25 @@
+{
+  "name": "contenta-converter-plugin",
+  "owner": {
+    "name": "ContentaSoft AB",
+    "url": "https://www.contenta-software.com/"
+  },
+  "description": "Contenta Converter for AI agents on Windows: batch image conversion, resizing, effects, metadata, PDF albums and slideshows for 100+ image formats.",
+  "plugins": [
+    {
+      "name": "contenta-converter",
+      "source": "./",
+      "description": "Contenta Converter on your Windows PC from your AI agent: batch image conversion, resizing, effects, metadata, PDF albums and slideshows for 100+ image formats. Runs locally on your files.",
+      "version": "1.0.1",
+      "tags": [
+        "windows",
+        "batch",
+        "mcp",
+        "image",
+        "conversion",
+        "resizing",
+        "effects"
+      ]
+    }
+  ]
+}
