@@ -10,7 +10,7 @@
       "name": "contenta-converter",
       "source": "./",
       "description": "Contenta Converter on your Windows PC from your AI agent: batch image conversion, resizing, effects, metadata, PDF albums and slideshows for 100+ image formats. Runs locally on your files.",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [
         "windows",
         "batch",
