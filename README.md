@@ -89,7 +89,9 @@ Every `contenta` command, option and exit code, the JSON output and every MCP to
   bytes as the npm package `@contentasoft/contenta-converter-mcp`, MIT, no dependencies; source: https://github.com/contentasoftware/mcp-launcher)
   or, without Node.js, the Windows PowerShell stub `server/stub.ps1` serves one tool, `get_started`. Neither sends
   anything over the network.
-- The skill may only run the app's own command-line tool (`allowed-tools: Bash(contenta:*)`).
+- While Claude Code uses the skill, it can run the app's own command-line tool in Bash or PowerShell without asking
+  (`allowed-tools: Bash(contenta *) PowerShell(contenta *) Bash(contenta.exe *) PowerShell(contenta.exe *)`). That permission ends when you send your next message. Other commands, and the
+  plugin's MCP tools, follow your own Claude Code permission settings.
 
 ## License
 
