@@ -46,7 +46,7 @@ Client-by-client instructions: https://www.npmjs.com/package/@contentasoft/conte
 
 ## What is included
 
-- **MCP server** `contenta-converter` with the tools `convert_image`, `batch_convert`, `ai_transform`, `create_pdf_album`, `create_slideshow`, `merge_pdfs`, `detect_format`, `list_effects`, `read_metadata`, `write_metadata`. Each tool
+- **MCP server** `contenta-converter` with the tools `convert_image`, `batch_convert`, `ai_transform`, `create_pdf_album`, `create_slideshow`, `merge_pdfs`, `detect_format`, `get_file_info`, `list_formats`, `list_effects`, `read_metadata`, `write_metadata`, `get_license_status`. Each tool
   says whether it only reads files, writes new files, may overwrite files, or uses the internet.
 - **Skill** `contenta-image-processing`: how and when the agent should use those tools and the `contenta` command line.
 
@@ -57,11 +57,18 @@ Client-by-client instructions: https://www.npmjs.com/package/@contentasoft/conte
   To convert each new photo saved to a folder while you are signed in, start `watch` at logon; it runs until you sign out or close its window:
 
   ```
-  schtasks /create /tn "Contenta Converter watch" /sc onlogon /tr "contenta watch D:\Inbox --output D:\Ready --format webp"
+  schtasks /create /tn "Contenta Converter watch" /sc onlogon /tr "contenta watch D:\Inbox -o D:\Ready --format webp"
   ```
-- Every command takes `--json` and prints JSON on stdout. An error is one `{"success":false,"error":"...","exitCode":N}` object. `batch --json` prints progress objects while it runs; the last object is the summary, with `outputs` and `errors`.
-- Exit codes: 0 done · 1 general error · 2 invalid arguments · 4 a conversion failed (in a batch the other files are still written) · 5 file or folder not found · 6 bundled tools missing · 130 cancelled.
-- The full command reference is the skill: `skills/contenta-image-processing/SKILL.md`.
+- Every command takes `--json` and prints one JSON object on stdout (logs go to stderr): `success`, `exitCode`, `error`, `warnings`, `errors` and `outputs`, plus the trial fields when they apply. Add `--progress` for one `{"type":"progress",...}` line per finished file before that object.
+- Exit codes: 0 done · 1 unexpected error · 2 invalid arguments · 3 input not found or unreadable · 4 some items failed (the others are written) · 5 nothing succeeded · 6 the licence or trial refused the run · 130 cancelled. The four ContentaSoft command lines share this table.
+- The skill (`skills/contenta-image-processing/SKILL.md`) tells the agent which commands to use.
+
+## Full CLI and MCP reference
+
+Every `contenta` command, option and exit code, the JSON output and every MCP tool with its parameters:
+
+- Command line: https://github.com/brunojanvier77/ContentaSoft/blob/main/contenta-converter/cli.md
+- MCP server: https://github.com/brunojanvier77/ContentaSoft/blob/main/contenta-converter/mcp-server.md
 
 ## Privacy
 
