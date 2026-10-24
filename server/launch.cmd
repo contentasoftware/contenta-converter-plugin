@@ -1,5 +1,5 @@
 @echo off
-rem Contenta Converter MCP launcher for the Claude Code plugin. Starts the app's own MCP server
+rem Contenta Photo Converter MCP launcher for the Claude Code plugin. Starts the app's own MCP server
 rem ("contenta serve") and passes stdin/stdout straight through; nothing else runs, nothing is downloaded.
 rem Lookup order: CONTENTASOFT_CC_EXE override, per-user install, PATH, Program Files.
 rem If the app is not installed: node index.js (the full launcher) when Node.js exists, otherwise

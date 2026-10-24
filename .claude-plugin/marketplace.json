@@ -1,15 +1,15 @@
 {
-  "name": "contenta-converter-plugin",
+  "name": "contenta-photo-converter-plugin",
   "owner": {
     "name": "ContentaSoft AB",
     "url": "https://www.contenta-software.com/"
   },
-  "description": "Contenta Converter for AI agents on Windows: batch image conversion, resizing, effects, metadata, PDF albums and slideshows for 100+ image formats.",
+  "description": "Contenta Photo Converter for AI agents on Windows: batch image conversion, resizing, effects, metadata, PDF albums and slideshows for 100+ image formats.",
   "plugins": [
     {
-      "name": "contenta-converter",
+      "name": "contenta-photo-converter",
       "source": "./",
-      "description": "Contenta Converter on your Windows PC from your AI agent: batch image conversion, resizing, effects, metadata, PDF albums and slideshows for 100+ image formats. Runs locally on your files.",
+      "description": "Contenta Photo Converter on your Windows PC from your AI agent: batch image conversion, resizing, effects, metadata, PDF albums and slideshows for 100+ image formats. Runs locally on your files.",
       "version": "1.0.4",
       "tags": [
         "windows",

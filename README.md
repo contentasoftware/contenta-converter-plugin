@@ -1,6 +1,6 @@
-# Contenta Converter plugin
+# Contenta Photo Converter plugin
 
-Use **Contenta Converter** from your AI agent on your Windows PC: batch image conversion, resizing, effects, metadata, PDF albums and slideshows for 100+ image formats. You ask in plain words and the
+Use **Contenta Photo Converter** (the Contenta Converter app) from your AI agent on your Windows PC: batch image conversion, resizing, effects, metadata, PDF albums and slideshows for 100+ image formats. You ask in plain words and the
 agent does the work on files on your computer. It works with any agent that runs local MCP servers: Cursor,
 Claude Code, Codex, VS Code, Windsurf and others.
 
@@ -23,17 +23,17 @@ Contenta Converter also works without an agent: open it from the Start menu and 
 marketplace, named after the repository:
 
 ```
-/plugin marketplace add contentasoftware/contenta-converter-plugin
-/plugin install contenta-converter@contenta-converter-plugin
+/plugin marketplace add contentasoftware/contenta-photo-converter-plugin
+/plugin install contenta-photo-converter@contenta-photo-converter-plugin
 ```
 
-From a terminal the same is `claude plugin marketplace add contentasoftware/contenta-converter-plugin` and `claude plugin install contenta-converter@contenta-converter-plugin`.
-Cowork and the Claude.ai directory: install **Contenta Converter** from the directory once it is listed.
+From a terminal the same is `claude plugin marketplace add contentasoftware/contenta-photo-converter-plugin` and `claude plugin install contenta-photo-converter@contenta-photo-converter-plugin`.
+Cowork and the Claude.ai directory: install **Contenta Photo Converter** from the directory once it is listed.
 
 **Cursor, Claude Desktop, VS Code, Codex and other MCP clients** (`mcpServers` JSON):
-`"contenta-converter": { "command": "cmd", "args": ["/c", "npx", "-y", "@contentasoft/contenta-converter-mcp"] }` (needs Node.js 18+), or,
-once the app is installed, `"contenta-converter": { "command": "contenta", "args": ["serve"] }` with no Node.js at all.
-Client-by-client instructions: https://www.npmjs.com/package/@contentasoft/contenta-converter-mcp
+`"contenta-photo-converter": { "command": "cmd", "args": ["/c", "npx", "-y", "@contentasoft/contenta-photo-converter-mcp"] }` (needs Node.js 18+), or,
+once the app is installed, `"contenta-photo-converter": { "command": "contenta", "args": ["serve"] }` with no Node.js at all.
+Client-by-client instructions: https://www.npmjs.com/package/@contentasoft/contenta-photo-converter-mcp
 
 ## What you need
 
@@ -46,7 +46,7 @@ Client-by-client instructions: https://www.npmjs.com/package/@contentasoft/conte
 
 ## What is included
 
-- **MCP server** `contenta-converter` with the tools `convert_image`, `batch_convert`, `ai_transform`, `create_pdf_album`, `create_slideshow`, `merge_pdfs`, `detect_format`, `get_file_info`, `list_formats`, `list_effects`, `read_metadata`, `write_metadata`, `get_license_status`. Each tool
+- **MCP server** `contenta-photo-converter` with the tools `convert_image`, `batch_convert`, `ai_transform`, `create_pdf_album`, `create_slideshow`, `merge_pdfs`, `detect_format`, `get_file_info`, `list_formats`, `list_effects`, `read_metadata`, `write_metadata`, `get_license_status`. Each tool
   says whether it only reads files, writes new files, may overwrite files, or uses the internet.
 - **Skill** `contenta-image-processing`: how and when the agent should use those tools and the `contenta` command line.
 
@@ -86,11 +86,11 @@ Every `contenta` command, option and exit code, the JSON output and every MCP to
 - As a Claude plugin it runs `server/launch.cmd` from the plugin folder, which looks for `contenta.exe` in the app's
   install folder (`%LOCALAPPDATA%\Programs\ContentaConverter`), on your `PATH` or in `Program Files`, and runs
   `contenta serve`. Nothing is downloaded. If the app is missing, the bundled Node launcher (`server/index.js`, the same
-  bytes as the npm package `@contentasoft/contenta-converter-mcp`, MIT, no dependencies; source: https://github.com/contentasoftware/mcp-launcher)
+  bytes as the npm package `@contentasoft/contenta-photo-converter-mcp`, MIT, no dependencies; source: https://github.com/contentasoftware/mcp-launcher)
   or, without Node.js, the Windows PowerShell stub `server/stub.ps1` serves one tool, `get_started`. Neither sends
   anything over the network.
 - While Claude Code uses the skill, it can use the plugin's MCP tools and run the app's own command-line tool in Bash or
-  PowerShell without asking (`allowed-tools: Bash(contenta *) PowerShell(contenta *) Bash(contenta.exe *) PowerShell(contenta.exe *) mcp__plugin_contenta-converter_contenta-converter`). That permission ends when you send your next message.
+  PowerShell without asking (`allowed-tools: Bash(contenta *) PowerShell(contenta *) Bash(contenta.exe *) PowerShell(contenta.exe *) mcp__plugin_contenta-photo-converter_contenta-photo-converter`). That permission ends when you send your next message.
   Other commands follow your own Claude Code permission settings.
 
 ## License
